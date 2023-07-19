@@ -1,10 +1,15 @@
 import './App.css';
+import { Stack} from '@chakra-ui/react'
+import AllRoutes from './components/AllRoutes';
+import Navbar from './components/Navbar';
+
 
 function App() {
   return (
-    <div className="App">
-      <h1>helo</h1>
-    </div>
+    <Stack className="App">
+      <Navbar/>
+      <AllRoutes/>
+    </Stack>
   );
 }
 
