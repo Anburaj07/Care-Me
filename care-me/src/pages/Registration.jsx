@@ -1,10 +1,10 @@
 import { Heading, Select, Spinner } from "@chakra-ui/react";
-import {Box, Center, Flex,Stack,VStack,Text,useToast,FormLabel, Button, Input, FormControl} from "@chakra-ui/react";
+import {Box,Stack,VStack,Text,useToast,FormLabel, Button, Input, FormControl} from "@chakra-ui/react";
 import axios from 'axios';
 import{ useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const initState={name:'',accountType:'',age:'',email:'',phoneNo:"",gender:"",height:"",weight:""};
+const initState={name:'',accountType:'patient',age:'',email:'',phoneNo:"",gender:"",height:"",weight:""};
 const Registration=()=>{    
     const navigate=useNavigate();
     const toast = useToast();
@@ -47,33 +47,31 @@ const Registration=()=>{
           });
         });
     };
+
     if(loading){
        return <Box display="flex" justifyContent="center" marginTop="150px">
        <Spinner
          thickness='4px' speed='0.95s' emptyColor='gray.200' color='blue.500' size="xl" />
      </Box>
     }
-    const {name,accountType,age,email,phoneNo,gender,height,weight} = formData;
+    
+    const handleClick=()=>{
+        navigate('/login')
+    }
+
+    const {name,age,email,phoneNo,gender,height,weight} = formData;
     const stackStyles = {
-        boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px", // Your desired box shadow style
+        boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
       };
     return(
         <Box marginBottom="50px" >
-            <Heading>Register here </Heading>
+            <Heading color="teal.500">Register here </Heading>
             <br />
             <Stack  width="xl" margin="auto" padding="30px" direction="column" style={stackStyles}>
             <form onSubmit={handleSubmit} >  
                     <FormControl isRequired>
                          <FormLabel>Name</FormLabel>
                          <Input type="text" name="name" border="1px solid black" value={name} onChange={handleChange} placeholder="Enter your name" />
-                    </FormControl>
-                    <br />
-                    <FormControl>
-                        <FormLabel>AccountType</FormLabel>
-                        <Select placeholder='Select Account Type' border="1px solid black" name="accountType" value={accountType} onChange={handleChange}>
-                            <option value="patient">Patient</option>
-                            <option value="doctor">Doctor</option>
-                        </Select>
                     </FormControl>
                     <br />    
                     <FormControl>
@@ -108,9 +106,9 @@ const Registration=()=>{
                         <FormLabel>Weight</FormLabel>
                         <Input type="number" name="weight" border="1px solid black" value={weight} onChange={handleChange} placeholder="Enter your weight (kg)" />
                     </FormControl>   
-                    <br />                 
-
+                    <br />   
                     <Button colorScheme="blue" mr={3} type="submit">Submit </Button>
+                    <Text >Already have an account? <Button bg="none" marginTop="-5px" marginLeft="4px" color="red.400" onClick={handleClick}>Login</Button></Text>
                 </form>
             </Stack>                   
         </Box>        
