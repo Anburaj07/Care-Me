@@ -1,6 +1,6 @@
 import {Box, Center, Flex, Heading, Spacer,Stack,Text,useToast} from "@chakra-ui/react";
 import axios from 'axios';
-import{ useContext, useRef, useState } from "react";
+import{ useContext, useState } from "react";
 import {FormLabel, Button, Input, FormControl} from "@chakra-ui/react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
@@ -33,6 +33,7 @@ const Login=()=>{
                 status: "success",
                 isClosable: true,
               });
+              navigate('/')
           }else{
             toast({
                 title: `Login Failed.`,
@@ -57,22 +58,22 @@ const Login=()=>{
         navigate('/registration')
     }
     const stackStyles = {
-        boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px", // Your desired box shadow style
+        boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
       };
     const { name, phoneNo } = formData;
     return(
           <Box>
-            <Heading>Sign in</Heading>
+            <Heading color="teal.500">Sign in</Heading>
             <br />
             <Stack direction="column" width="md" margin="auto" padding="30px" style={stackStyles}>                
             <form onSubmit={handleSubmit} >              
                     <FormControl isRequired>
-                         <FormLabel >Mobile Number</FormLabel>
+                         <FormLabel >Name</FormLabel>
                          <Input type="text" name="name" border="1px solid black" value={name} onChange={handleChange} placeholder="Enter your name " />
                     </FormControl>
                     <br />
                     <FormControl>
-                        <FormLabel>Password</FormLabel>
+                        <FormLabel>Mobile Number</FormLabel>
                         <Input type="number" name="phoneNo" border="1px solid black" value={phoneNo} onChange={handleChange} placeholder="Enter Mobile Number" />
                     </FormControl>
                     <br />                    

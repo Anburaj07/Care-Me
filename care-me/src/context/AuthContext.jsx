@@ -14,6 +14,7 @@ export const AuthContextProvider = (props) => {
       loginUser,
       logoutUser
     };
+    console.log(authState?.isAuth,'in auth')
     return(
       <AuthContext.Provider value={providerState}>
         {props.children}

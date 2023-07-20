@@ -14,6 +14,10 @@ const Navbar=()=>{
         onClose()
         navigate('/login')
     }
+    const handleHome=()=>{
+        onClose()
+        navigate('/')
+    }
     return(
         <Flex justify="space-between" bg='#B2F5EA' color='#285E61' px={4} alignItems="center">
             <Link href='/'>
@@ -28,6 +32,7 @@ const Navbar=()=>{
                 <DrawerHeader>Chakra UI Assignment</DrawerHeader>
                      <DrawerBody>
                         <Flex flexDirection="column" justifyContent="space-between" height="300px">
+                        <Button onClick={handleHome}>Home</Button>  
                         <Button  onClick={handleLogin}>Login/Register</Button>
                         <Button >Gallery</Button>                        
                         <Button>SignUp</Button>
