@@ -37,14 +37,14 @@
     "doctors": [
       {
       "id": 1,
-      "name": "Olivia Johnson",
+      "name": "Sahana Johnson",
       "specialist": "Pediatrician",
       "price": 40,
       "experience": "6 yrs",
       "patients": "300+",
       "Biography": "Passionate pediatrician dedicated to providing the best care for children. She believes in creating a comfortable environment for young patients and their families.",
       "location": "Los Angeles",
-      "image": "https://imagesx.practo.com/providers/dr-lavanya-mohana-sundaram-pediatrician-coimbatore-f9761f4a-ab19-4842-a3db-3996de2b8ee6.jpg?i_type=t_100x100"
+      "image": "https://imagesx.practo.com/providers/dr-gowthaman-sarathy-pediatrician-chennai-2d5e6b3d-c47e-4534-9d53-2426cf76d1cd.jpg?i_type=t_100x100"
     },
     {
       "id": 2,

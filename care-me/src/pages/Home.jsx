@@ -1,6 +1,5 @@
 import { Heading,Text, Box,Grid,GridItem,Image,Link } from "@chakra-ui/react";
 import CardComponent from "../components/CardComponent";
-import consultation from "../images/consultation.jpg"
 import Banner from "../images/Banner.jpg"
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';

@@ -1,4 +1,4 @@
-import { Card, CardHeader, Text, Divider,Button,CardBody,Heading, CardFooter,Image,Stack, Box, VStack  } from '@chakra-ui/react'
+import { Card, Text,CardBody,Heading,Image, Box } from '@chakra-ui/react'
 
 const CardComponent=({image,heading,text})=>{
     // const{image,heading,text}=props;

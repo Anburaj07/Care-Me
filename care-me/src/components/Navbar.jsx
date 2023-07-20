@@ -18,6 +18,10 @@ const Navbar=()=>{
         onClose()
         navigate('/')
     }
+    // const handleConsultation=()=>{
+    //     onClose()
+    //     navigate("/consultation/:Dermatologist")
+    // }
     return(
         <Flex justify="space-between" bg='#B2F5EA' color='#285E61' px={4} alignItems="center">
             <Link href='/'>
@@ -33,9 +37,8 @@ const Navbar=()=>{
                      <DrawerBody>
                         <Flex flexDirection="column" justifyContent="space-between" height="300px">
                         <Button onClick={handleHome}>Home</Button>  
-                        <Button  onClick={handleLogin}>Login/Register</Button>
-                        <Button >Gallery</Button>                        
-                        <Button>SignUp</Button>
+                        <Button onClick={handleLogin}>Login/Register</Button>
+                        <Button >User Profile</Button>                        
                         <Button >About Us</Button>
                         </Flex>          
                     </DrawerBody>

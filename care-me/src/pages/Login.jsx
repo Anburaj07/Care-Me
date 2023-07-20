@@ -1,13 +1,13 @@
-import {Box, Center, Flex, Heading, Spacer,Stack,Text,useToast} from "@chakra-ui/react";
+import {Box,  Heading, Stack,Text,useToast} from "@chakra-ui/react";
 import axios from 'axios';
 import{ useContext, useState } from "react";
 import {FormLabel, Button, Input, FormControl} from "@chakra-ui/react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 
 const Login=()=>{
     const toast = useToast();
-    const {loginUser,authState } = useContext(AuthContext);
+    const {loginUser} = useContext(AuthContext);
     const [formData, setFormData] = useState({ name: "", phoneNo: "" });  
     const handleChange = (e) => {
       const { name, value } = e.target;
@@ -62,10 +62,10 @@ const Login=()=>{
       };
     const { name, phoneNo } = formData;
     return(
-          <Box>
-            <Heading color="teal.500">Sign in</Heading>
+          <Box marginBottom="30px">
+            <Heading color="teal.500">Sign-in here</Heading>
             <br />
-            <Stack direction="column" width="md" margin="auto" padding="30px" style={stackStyles}>                
+            <Stack direction="column" width="md" margin="auto" padding="30px" style={stackStyles} borderRadius='2xl'>                
             <form onSubmit={handleSubmit} >              
                     <FormControl isRequired>
                          <FormLabel >Name</FormLabel>

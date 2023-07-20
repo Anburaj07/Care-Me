@@ -1,4 +1,4 @@
-import { Box, Button, Heading, Image, Text } from "@chakra-ui/react";
+import { Box, Heading, Image, Text } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 const DoctorsCard = ({ title, description,image}) => {
     const navigate=useNavigate()
