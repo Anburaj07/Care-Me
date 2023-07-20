@@ -3,6 +3,7 @@ import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Registration from "../pages/Registration";
 import Consultation from "../pages/Consultation";
+import PrivateRoute from "./PrivateRoute";
 
 const AllRoutes=()=>{
     return (
@@ -10,7 +11,9 @@ const AllRoutes=()=>{
             <Route path="/" element={<Home/>} />
             <Route path="/login" element={<Login/>}/>
             <Route path="/registration" element={<Registration/>}/>
-            <Route path="/consultation/:title" element={<Consultation/>}/>
+            <Route path="/consultation/:title" element={<PrivateRoute>
+                <Consultation/>
+            </PrivateRoute>}/>
         </Routes>
     )
 }

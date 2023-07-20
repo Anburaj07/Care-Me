@@ -1,5 +1,5 @@
 import { Heading, Select, Spinner } from "@chakra-ui/react";
-import {Box,Stack,VStack,Text,useToast,FormLabel, Button, Input, FormControl} from "@chakra-ui/react";
+import {Box,Stack,Text,useToast,FormLabel, Button, Input, FormControl} from "@chakra-ui/react";
 import axios from 'axios';
 import{ useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -13,7 +13,7 @@ const Registration=()=>{
     const handleChange = (e) => {
       let { name, value } = e.target;
       let val=(e.target.type);
-      if(val=="number"){
+      if(val==="number"){
         value=Number(value)
       }
       setFormData((prevData) => ({ ...prevData, [name]: value }));
@@ -67,7 +67,7 @@ const Registration=()=>{
         <Box marginBottom="50px" >
             <Heading color="teal.500">Register here </Heading>
             <br />
-            <Stack  width="xl" margin="auto" padding="30px" direction="column" style={stackStyles}>
+            <Stack borderRadius='2xl' width="xl" margin="auto" padding="30px" direction="column" style={stackStyles}>
             <form onSubmit={handleSubmit} >  
                     <FormControl isRequired>
                          <FormLabel>Name</FormLabel>
