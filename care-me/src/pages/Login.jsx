@@ -1,13 +1,13 @@
 import {Box,  Heading, Stack,Text,useToast} from "@chakra-ui/react";
 import axios from 'axios';
 import{ useContext, useState } from "react";
+import { AuthContext } from "../context/AuthContext";
 import {FormLabel, Button, Input, FormControl} from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../context/AuthContext";
 
 const Login=()=>{
     const toast = useToast();
-    const {loginUser} = useContext(AuthContext);
+    const {authState,loginUser} = useContext(AuthContext);
     const [formData, setFormData] = useState({ name: "", phoneNo: "" });  
     const handleChange = (e) => {
       const { name, value } = e.target;
@@ -27,6 +27,7 @@ const Login=()=>{
           if(res.data.length>0){
             const [arr]=res?.data;
             const{name,accountType,age,email,phoneNo,gender,height,weight}=arr;
+            authState.isAuth=true;
             loginUser(name,accountType,age,email,phoneNo,gender,height,weight)
             toast({
                 title: `Login Successful.`,

@@ -5,43 +5,9 @@ import { useEffect, useReducer } from "react";
 import axios from "axios";
 import Quote from "../images/Quote.png";
 import SlidingImages from "../components/SlidingImages";
+import { reducer } from "../Reducer/ConsultationReducer";
+import { initialState } from "../Reducer/ConsultationReducer";
 
-
-const reducer=(state,action)=>{
-    switch(action.type){
-        case "FETCH_REQUEST":{
-            return{
-                "loading": true,
-                "data": [],
-                "error": false
-              }
-        }
-        case "FETCH_SUCCESS":{
-            return{
-                "loading": false,
-                "data": action.payload,
-                "error": false
-              }
-        }
-        case "FETCH_FAILURE":{
-            return{
-                "loading": false,
-                "data": [],
-                "error": true
-              }
-        }
-        default: {
-            throw new Error('Invalid action Type')
-        }
-    }
-}
-const initialState = {
-    "loading": false,
-    "data": [],
-    "error": false
-  };
-
-  
 const Consultation =()=>{
     const[state,dispatch]=useReducer(reducer,initialState)
     const{title}=useParams();
@@ -63,12 +29,9 @@ const Consultation =()=>{
           })
     }
 
-    console.log(state.data)
+    console.log(state.data,'specilest data')
     return(
         <Box>
-            {/* <Box margin="auto" w="60%" borderRadius='md'>
-                <Image w="100%" src={Quote}></Image>
-            </Box> */}
             <SlidingImages image1={Quote} image2={Quote} image3={Quote}/>
             {state.loading && 
             <Box padding='6' boxShadow='lg' bg='white'>
@@ -79,7 +42,8 @@ const Consultation =()=>{
         {state.loading ===false && 
             <Box>
                 {state?.data.map((item)=>(<ConsultationCard key={item?.id} {...item} />))}
-            </Box>        
+            </Box>   
+             
           }
 
         </Box>
