@@ -4,6 +4,9 @@ import Login from "../pages/Login";
 import Registration from "../pages/Registration";
 import Consultation from "../pages/Consultation";
 import PrivateRoute from "./PrivateRoute";
+import DoctorProfile from "../pages/DoctorProfile";
+import UserProfile from "../pages/UserProfile";
+
 
 const AllRoutes=()=>{
     return (
@@ -13,6 +16,10 @@ const AllRoutes=()=>{
             <Route path="/registration" element={<Registration/>}/>
             <Route path="/consultation/:title" element={<PrivateRoute>
                 <Consultation/>
+            </PrivateRoute>}/>
+            <Route path="/doctorProfile/:id" element={<DoctorProfile/>}/>
+            <Route path="/userProfile" element={<PrivateRoute>
+                <UserProfile/>
             </PrivateRoute>}/>
         </Routes>
     )

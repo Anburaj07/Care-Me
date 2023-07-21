@@ -18,10 +18,10 @@ const Navbar=()=>{
         onClose()
         navigate('/')
     }
-    // const handleConsultation=()=>{
-    //     onClose()
-    //     navigate("/consultation/:Dermatologist")
-    // }
+    const handleUserProfile=()=>{
+        onClose()
+        navigate('/userProfile')
+    }
     return(
         <Flex justify="space-between" bg='#B2F5EA' color='#285E61' px={4} alignItems="center">
             <Link href='/'>
@@ -33,12 +33,12 @@ const Navbar=()=>{
                 <DrawerOverlay />
                 <DrawerContent>
                 <DrawerCloseButton />
-                <DrawerHeader>Chakra UI Assignment</DrawerHeader>
+                <DrawerHeader>Our Features</DrawerHeader>
                      <DrawerBody>
                         <Flex flexDirection="column" justifyContent="space-between" height="300px">
                         <Button onClick={handleHome}>Home</Button>  
                         <Button onClick={handleLogin}>Login/Register</Button>
-                        <Button >User Profile</Button>                        
+                        <Button onClick={handleUserProfile}>User Profile</Button>                      
                         <Button >About Us</Button>
                         </Flex>          
                     </DrawerBody>
