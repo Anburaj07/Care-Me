@@ -31,9 +31,9 @@ const cardData = [
 const Home=()=>{
     return (
              <Box p={8} >
-                <Link href="/login"><Image src={Banner} borderRadius='lg'/> </Link>
+                <Link href="/login"><Image margin="auto" src={Banner} borderRadius='lg'/> </Link>
                 <Grid  marginTop="30px"
-             templateColumns={{ base: 'repeat(2, 1fr)', md: 'repeat(3, 1fr)', lg: 'repeat(5, 1fr)'}}
+             templateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(3, 1fr)', lg: 'repeat(5, 1fr)'}}
              gap={7}
            >
                 <GridItem>

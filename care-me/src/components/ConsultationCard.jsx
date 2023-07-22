@@ -28,8 +28,8 @@ const ConsultationCard=({id,image,name,price,location,specialist,experience})=>{
 
         setTimeout(() => {
           setShowAlert(false);
-        //   navigate('/')
-        }, 10000);     
+          navigate('/')
+        }, 3000);     
     }
 
     return(

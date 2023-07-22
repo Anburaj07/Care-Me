@@ -1,4 +1,4 @@
-import { Heading, Select, Spinner } from "@chakra-ui/react";
+import { Flex, Heading, Select, Spinner } from "@chakra-ui/react";
 import {Box,Stack,Text,useToast,FormLabel, Button, Input, FormControl} from "@chakra-ui/react";
 import axios from 'axios';
 import{ useState } from "react";
@@ -36,6 +36,7 @@ const Registration=()=>{
                 status: "success",
                 isClosable: true,
               });
+              navigate('/login')
           setFormData(initState)
         })
         .catch((err) => {
@@ -49,10 +50,15 @@ const Registration=()=>{
     };
 
     if(loading){
-       return <Box display="flex" justifyContent="center" marginTop="150px">
-       <Spinner
-         thickness='4px' speed='0.95s' emptyColor='gray.200' color='blue.500' size="xl" />
-     </Box>
+      return <Flex margin="auto" justify="center" alignItems="center" boxSize="lg" >
+        <Spinner
+          thickness='4px'
+          speed='0.65s'
+          emptyColor='gray.200'
+          color='blue.500'
+          size='xl'
+        />
+      </Flex>
     }
     
     const handleClick=()=>{

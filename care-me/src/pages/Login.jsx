@@ -1,4 +1,4 @@
-import {Box,  Heading, Stack,Text,useToast} from "@chakra-ui/react";
+import {Box,  Flex,  Heading, Spinner, Stack,Text,useToast} from "@chakra-ui/react";
 import axios from 'axios';
 import{ useContext, useState } from "react";
 import { AuthContext } from "../context/AuthContext";
@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 const Login=()=>{
     const toast = useToast();
     const {authState,loginUser} = useContext(AuthContext);
+    const [loading,setLoading]=useState(false)
     const [formData, setFormData] = useState({ name: "", phoneNo: "" });  
     const handleChange = (e) => {
       const { name, value } = e.target;
@@ -17,12 +18,13 @@ const Login=()=>{
     const handleSubmit = (e) => {
       e.preventDefault();
       console.log("Form data submitted:", formData);
-  
+      setLoading(true)
       axios({
         url: `https://server-tsms.onrender.com/users?phoneNo=${formData.phoneNo}`,
         method: "get",
       })
         .then((res) => {
+          setLoading(false)
           console.log(res);          
           if(res.data.length>0){
             const [arr]=res?.data;
@@ -62,6 +64,18 @@ const Login=()=>{
         boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
       };
     const { name, phoneNo } = formData;
+
+    if(loading){
+      return <Flex margin="auto" justify="center" alignItems="center" boxSize="lg" >
+        <Spinner
+          thickness='4px'
+          speed='0.65s'
+          emptyColor='gray.200'
+          color='blue.500'
+          size='xl'
+        />
+      </Flex>
+    }
     return(
           <Box marginBottom="30px">
             <Heading color="teal.500">Sign-in here</Heading>

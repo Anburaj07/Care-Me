@@ -1,4 +1,4 @@
-import { Box, SkeletonCircle, SkeletonText } from "@chakra-ui/react"
+import { Box, Heading, SkeletonCircle, SkeletonText } from "@chakra-ui/react"
 import { useParams } from "react-router-dom";
 import ConsultationCard from "../components/ConsultationCard";
 import { useEffect, useReducer } from "react";
@@ -31,8 +31,7 @@ const Consultation =()=>{
 
     console.log(state.data,'specilest data')
     return(
-        <Box>
-            <SlidingImages image1={Quote} image2={Quote} image3={Quote}/>
+        <Box>            
             {state.loading && 
             <Box padding='6' boxShadow='lg' bg='white'>
                 <SkeletonCircle size='10' />
@@ -41,9 +40,10 @@ const Consultation =()=>{
         }
         {state.loading ===false && 
             <Box>
+                <SlidingImages image1={Quote} image2={Quote} image3={Quote}/>
+                <Box p={6} w="80%" margin="auto" marginTop="30px" bg="gray.100" color="teal.800" boxShadow="xl"><Heading>{title} Doctors List available Here</Heading></Box>
                 {state?.data.map((item)=>(<ConsultationCard key={item?.id} {...item} />))}
-            </Box>   
-             
+            </Box>                
           }
 
         </Box>

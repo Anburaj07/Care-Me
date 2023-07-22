@@ -65,7 +65,7 @@ const DoctorProfile=()=>{
           </Box>
         }
          {state.loading ===false &&
-         <Flex flexWrap="wrap" alignItems="center"  p={4} margin="auto" justify="space-around" boxShadow='outline'>
+         <Flex flexWrap="wrap" alignItems="center"  p={4} margin="auto" justify="space-around" boxShadow='2xl' border="2px dashed gray">
           <Box>
           <Box>
           <Avatar size='2xl' name={name} src={image} />
