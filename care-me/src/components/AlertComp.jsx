@@ -1,4 +1,4 @@
-import {Modal, ModalOverlay, ModalContent, ModalHeader, ModalBody, ModalCloseButton, Heading} from '@chakra-ui/react'
+import {Modal, ModalOverlay, ModalContent, ModalHeader, ModalBody, ModalCloseButton, Heading, Text} from '@chakra-ui/react'
 
 const AlertComp=({showAlert,setShowAlert,val,name})=>{
     return(
@@ -10,7 +10,7 @@ const AlertComp=({showAlert,setShowAlert,val,name})=>{
             </ModalHeader>
             <ModalCloseButton color="white"/>
             <ModalBody fontSize="lg">              
-              Your appointment has been scheduled with {name} at {val}  successfully.
+              Your appointment has been scheduled with {name} at {val}  successfully. Further details will be shared to your mobile number.
             </ModalBody>
           </ModalContent>
         </Modal>

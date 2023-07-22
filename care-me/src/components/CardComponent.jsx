@@ -6,8 +6,8 @@ const CardComponent=({image,heading,text})=>{
     return(
         <Card boxShadow="xl" borderRadius="lg">
            <CardBody  height="200px">
-            <Box bg="#98cbd6"  p={2}>
-                <Image height="200px" src={image}></Image>
+            <Box bg="#98cbd6"  p={2} borderRadius="lg">
+                <Image height="200px" src={image} margin="auto"></Image>
             </Box>
             <Box >
             <br/>
